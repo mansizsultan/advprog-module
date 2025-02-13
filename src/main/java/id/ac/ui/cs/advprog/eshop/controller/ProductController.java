@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,6 +40,21 @@ public class ProductController {
     @GetMapping("/delete/{id}")
     public String deleteProduct(@PathVariable("id") String productId) {
         service.delete(productId);
+    }
+
+    @GetMapping("/edit/{id}")
+    public String editProductPage(@PathVariable("id") String productId, Model model) {
+        Optional<Product> product = service.findById(productId);
+        if (product.isPresent()) {
+            model.addAttribute("product", product.get());
+            return "EditProduct";
+        }
+        return "redirect:/product/list";
+    }
+
+    @PostMapping("/edit")
+    public String editProductPost(@ModelAttribute Product product) {
+        service.update(product);
         return "redirect:/product/list";
     }
 }
