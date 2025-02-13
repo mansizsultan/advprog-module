@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/product")
@@ -34,6 +35,11 @@ public class ProductController {
         List<Product> products = service.findAll();
         model.addAttribute("products", products);
         return "productList";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable("id") String productId) {
+        service.delete(productId);
     }
 
     @GetMapping("/edit/{id}")
