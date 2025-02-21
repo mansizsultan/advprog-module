@@ -4,6 +4,41 @@
 | ------------------ | ---------- | ------------- |
 | Sultan Ibnu Mansiz | 2306275840 | B             |
 
+
+# Module 02: CI/CD & DevOps
+
+### Reflection 1: Fixing Issues, Continuous Integration and Continuous Deployment
+
+### **1. Code Quality Improvements and Strategy**  
+   - **Eliminating Duplicated String Literals**  
+     - **Problem**: The strings `"product"` and `"redirect:/product/list"` were repeated multiple times in `ProductController.java`.  
+     - **Solution**: Introduced constants (`PRODUCT_ATTRIBUTE` and `REDIRECT_LIST`) to replace the repeated values, enhancing maintainability.  
+     - **Why?** Using constants makes the code cleaner, easier to update, and reduces the risk of errors.  
+   
+   - **Empty Test Method in `EshopApplicationTests.java`**  
+     - **Problem**: SonarCloud flagged `contextLoads` as an empty method, suggesting either documentation or an exception.  
+     - **Solution**: Added a comment to clarify its purpose.  
+     - **Why?** This aligns with unit testing best practices, improving code readability for future developers.  
+
+   - **Unused Import in `ProductService.java`**  
+     - **Problem**: The import `java.util.Optional` was present but not used.  
+     - **Solution**: Removed the unnecessary import.  
+     - **Why?** Cleaning up unused imports reduces code clutter and improves readability.  
+
+---
+
+### **2. CI/CD Analysis**  
+   - **Continuous Integration (CI) Successfully Implemented**  
+     - Automated tests run with every push to ensure code correctness.  
+     - Static code analysis via SonarCloud maintains code quality.  
+     - The pipeline helps detect potential bugs and security issues early in development.  
+
+   - **Continuous Deployment (CD) is Partially Implemented**  
+     - Instead of using a GitHub Actions workflow for deployment, **Koyeb’s Autodeployment** feature was enabled, allowing automatic deployment when code is pushed.  
+     - While deployment is automated, integrating a push-based GitHub Action could further optimize the process.  
+     - However, due to limitations in Koyeb’s free plan, a fully integrated GitHub Action workflow is not feasible.  
+     - The current setup ensures that any commit merged into the `main` branch automatically updates the production environment.
+
 # Module 01: Coding Standards
 
 ### Reflection 1: Clean Code and Secure Coding Practices
