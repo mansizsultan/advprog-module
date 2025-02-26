@@ -76,8 +76,8 @@ tasks.test {
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
     reports {
-        xml.required.set(true)
-        html.required.set(true)
-        csv.required.set(false)
+        xml.required.set(true)    // Enable XML report (needed for SonarCloud)
+        html.required.set(true)   // HTML for local viewing
+        csv.required.set(false)   // Disable CSV (not needed)
     }
 }
