@@ -4,7 +4,7 @@
 | ------------------ | ---------- | ------------- |
 | Sultan Ibnu Mansiz | 2306275840 | B             |
 
-# Module 3 - Maintainability & OO Principles
+# Module 03: Maintainability & OO Principles
 
 ## Reflection 1: Implementing SOLID Principles
 
@@ -57,7 +57,7 @@
 
 ### 2. Benefits of Applying SOLID Principles
 
-- **Easier Maintenance:**
+- **Easier Maintenance: **
      - **SRP:** Changes related to a particular functionality are limited to a single class.
      - **Example:** Updating validation logic in `ProductServiceImpl` does not require modifications in `ProductController`.
 
