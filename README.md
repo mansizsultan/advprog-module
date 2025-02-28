@@ -25,10 +25,12 @@
        ```
      - `ProductController.java` and `CarController.java` each manage distinct business operations related to products and cars.
 
+
 - **Open-Closed Principle (OCP):**  
   The code is structured to allow extension without modifying existing implementations.  
   **Example:**
      - The use of generic interfaces like `BaseService<T>` and `BaseRepository<T>` makes it possible to add new entities without altering pre-existing logic.
+
 
 - **Liskov Substitution Principle (LSP):**  
   Subclasses should seamlessly replace their parent classes without introducing errors.  
@@ -54,7 +56,7 @@
        @Autowired
        private ProductService productService;
        ```
-
+       
 ### 2. Benefits of Applying SOLID Principles
 
 - **Easier Maintenance: **
@@ -91,8 +93,6 @@
      - Without **ISP**, large interfaces force implementations to handle unrelated methods, complicating testing.
      - **Example:** If a service interface combined product, car, and order operations, unit testing product-specific logic would require unnecessary dependencies.
 
----
-
 # Module 02: CI/CD & DevOps
 
 ## Reflection 1: Fixing Issues, Continuous Integration, and Continuous Deployment
@@ -127,30 +127,23 @@
      - However, due to limitations in Koyeb’s free plan, a fully integrated GitHub Action workflow is not feasible.
      - The current setup ensures that any commit merged into the `main` branch automatically updates the production environment.
 
----
-
 # Module 01: Coding Standards
 
 ## Reflection 1: Clean Code and Secure Coding Practices
 
 ### Clean Code Principles
-
 1. **Meaningful Names:** Use descriptive names like `findById` and `productId` for clarity.
 2. **Single Responsibility:** Methods should focus on one task, e.g., deleting a product and redirecting.
 3. **Encapsulation:** Use classes like `Product` to group related logic and ensure valid data.
 4. **Error Handling:** Display clear error messages instead of failing silently.
 
 ### Secure Coding Practices
-
 1. **Input Validation:** Use annotations like `@NotBlank` and `@Min` to validate user input.
 2. **Output Encoding:** Encode data (e.g., with Thymeleaf’s `th:text`) to prevent XSS attacks.
-
----
 
 ## Reflection 2: Unit Testing
 
 ### Unit Testing Principles
-
 1. **Importance:** Unit tests ensure code quality, prevent regressions, and build confidence.
 2. **Test Coverage:** Focus on key scenarios like edge cases, errors, and integrations, not just line coverage.
 3. **Code Cleanliness:** Avoid duplication by:
@@ -159,5 +152,4 @@
      - Adding **Helper Methods** for reusable actions like waiting.
 
 These practices improve readability, maintainability, and scalability of tests.
-
 
