@@ -4,6 +4,47 @@
 | ------------------ | ---------- | ------------- |
 | Sultan Ibnu Mansiz | 2306275840 | B             |
 
+# Module 4 - Refactoring and TDD  
+## Reflection 1: Implementing Test-Driven Development (TDD) Workflow  
+
+### 1. **TDD Workflow Reflection (Based on Percival, 2017)**  
+
+   - **Effectiveness:**  
+     Implementing the TDD workflow in this project has proven beneficial, as it required us to write tests before developing the actual functionality. This approach resulted in:  
+     - **Clearly defined goals:** By specifying expected system behaviors in advance (e.g., correct order status updates, proper CRUD operations), we ensured clarity in implementation.  
+     - **Immediate feedback:** Running tests early helped identify design flaws and missing functionalities, such as handling invalid inputs.  
+     - **Improved design:** Following TDD encouraged refactoring, leading to more maintainable and testable code, aligned with SOLID principles.  
+
+   - **Areas for Enhancement:**  
+     Moving forward, I aim to:  
+     - **Expand integration testing:** While unit tests effectively verify isolated logic, integration tests will help validate interactions between components.  
+     - **Enhance edge-case coverage:** More attention will be given to handling rare but critical scenarios, such as error handling in repository updates.  
+     - **Automate regression testing:** Setting up continuous integration will enable automatic test execution on each commit, ensuring quick feedback.  
+
+### 2. **Reflection on F.I.R.S.T. Testing Principles**  
+
+   - **Fast:**  
+     - Tests run efficiently in isolation, providing rapid feedback during development.  
+     - *Example:* Unit tests for models and repositories execute in milliseconds.  
+
+   - **Independent:**  
+     - While tests are generally isolated, shared test data occasionally introduces unintended dependencies.  
+     - *Next Steps:* Enhance test independence by using more granular mocks and dedicated test fixtures.  
+
+   - **Repeatable:**  
+     - The test suite produces consistent results across multiple executions, as it avoids reliance on external factors.  
+     - *Next Steps:* Maintain reliability by isolating dependencies such as file systems and databases using in-memory alternatives.  
+
+   - **Self-Validating:**  
+     - Tests automatically verify expected outcomes and clearly report failures.  
+     - *Example:* Assertions ensure that invalid order status updates trigger the expected exceptions.  
+
+   - **Timely:**  
+     - Writing tests alongside production code ensured that testing objectives were continuously met throughout development.  
+
+   - **Overall Evaluation:**  
+     - The test suite largely adheres to the F.I.R.S.T. principles. Future improvements will focus on enhancing test independence and adding more descriptive assertions for easier debugging.
+
 # Module 03: Maintainability & OO Principles
 
 ## Reflection 1: Implementing SOLID Principles
